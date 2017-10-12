@@ -1,0 +1,40 @@
+def fibo(n):
+    l1=[0]
+    if n==0:
+        print("Error")
+    elif n==1:
+        return l1
+    elif n==2:
+        l1.append(1)
+        return l1
+    else:
+        i=2
+        l1=[0,1]
+        while n:
+            x=l1[i-1]+l1[i-2]
+            l1.append(x)
+            i = i + 1
+            n = n - 1
+    return l1
+
+
+def namer(l1):
+    for i,val in enumerate(l1):
+        if val % 3 == 0:
+            l1[i]="Buzz"
+        elif val % 5==0:
+            l1[i]="Fizz"
+        elif val % 15:
+            l1[i]="FizzBuzz"
+        else:
+            for z in range(2,val):
+                if (val%z)==0:
+                    pass
+                else:
+                    l1[i]="BuzzFizz"
+    return l1
+
+
+n=20
+print(fibo(n))
+print(namer(fibo(n)))
